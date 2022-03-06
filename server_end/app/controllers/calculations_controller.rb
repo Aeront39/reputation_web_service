@@ -128,7 +128,7 @@ class CalculationsController < ApplicationController
 		else
 			predicted_grades = Hash.new
 			predicted_grades = QuizBased.calculate_predicted_grades(submissions)
-			render json: encryption(predicted_grades.to_json)
+			render json: predicted_grades.to_json
 		end
 	end
 
