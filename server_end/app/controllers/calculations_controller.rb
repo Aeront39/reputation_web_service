@@ -124,7 +124,7 @@ class CalculationsController < ApplicationController
 				final_reputation['HamerExpert'] = final_reputation_hamer_expert
 				final_reputation['LauwExpert'] = final_reputation_lauw_expert
 			end
-			render json: encryption(final_reputation.to_json)
+			render final_reputation.to_json
 		else
 			predicted_grades = Hash.new
 			predicted_grades = QuizBased.calculate_predicted_grades(submissions)
